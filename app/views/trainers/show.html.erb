@@ -6,5 +6,12 @@
   </div>
 </div>
 
+  <h4>Add a Pokemon!</h4>
+  <%= simple_form_for [@trainer, @pokemon] do |f| %>
+    <%= f.input :name, placeholder: "What's the name?" %>
+    <%= f.input :image_url, placeholder: "www.google.com/image" %>
+    <%= f.submit 'Add Pokemon', class: 'btn btn-primary' %>
+  <% end %>
+
 <%= link_to 'Edit', edit_trainer_path(@trainer) %> |
 <%= link_to 'Back', trainers_path %>
