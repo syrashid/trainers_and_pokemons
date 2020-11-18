@@ -6,6 +6,16 @@
   </div>
 </div>
 
+
+
+<div class="cards mt-3 mx-3">
+  <% @trainer.pokemons.each do |pokemon| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= pokemon.image_url %>')">
+      <%= pokemon.name %>
+    </div>
+  <% end %>
+</div>
+
   <h4>Add a Pokemon!</h4>
   <%= simple_form_for [@trainer, @pokemon] do |f| %>
     <%= f.input :name, placeholder: "What's the name?" %>
