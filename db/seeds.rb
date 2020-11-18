@@ -24,13 +24,25 @@ puts "Created #{Trainer.count} Pokemon Trainers 🏋️‍♂️"
 
 puts "Creating Pokemon"
 Pokemon.create!(
-  name: "Squirtle",
+  name: "Bubbles",
   image_url: "https://cdn.bulbagarden.net/upload/3/39/007Squirtle.png",
   trainer: ash
 )
 
 Pokemon.create!(
-  name: "Pikachu",
+  name: "Flint",
+  image_url: "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/500px-004Charmander.png",
+  trainer: ash
+)
+
+Pokemon.create!(
+  name: "Ivy",
+  image_url: "https://cdn.bulbagarden.net/upload/thumb/7/73/002Ivysaur.png/500px-002Ivysaur.png",
+  trainer: ash
+)
+
+Pokemon.create!(
+  name: "Sparky",
   image_url: "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/500px-025Pikachu.png",
   trainer: ash
 )
