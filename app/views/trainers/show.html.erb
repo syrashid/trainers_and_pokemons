@@ -12,6 +12,7 @@
   <% @trainer.pokemons.each do |pokemon| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= pokemon.image_url %>')">
       <%= pokemon.name %>
+      <%= link_to "+", pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure?"}, class: "card-remove-link" %>
     </div>
   <% end %>
 </div>

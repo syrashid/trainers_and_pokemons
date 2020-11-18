@@ -10,6 +10,13 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def destroy
+    @pokemon = Pokemon.find(params[:id])
+    @trainer = @pokemon.trainer
+    @pokemon.destroy
+    redirect_to trainer_path(@trainer)
+  end
+
   private
 
   def pokemon_params
