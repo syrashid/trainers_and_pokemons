@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_082257) do
+ActiveRecord::Schema.define(version: 2020_11_19_081843) do
+
+  create_table "learned_moves", force: :cascade do |t|
+    t.integer "move_id", null: false
+    t.integer "pokemon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["move_id"], name: "index_learned_moves_on_move_id"
+    t.index ["pokemon_id"], name: "index_learned_moves_on_pokemon_id"
+  end
+
+  create_table "moves", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.integer "trainer_id", null: false
@@ -28,5 +43,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_082257) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "learned_moves", "moves"
+  add_foreign_key "learned_moves", "pokemons"
   add_foreign_key "pokemons", "trainers"
 end

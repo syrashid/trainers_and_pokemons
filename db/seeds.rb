@@ -1,6 +1,8 @@
 puts "Clearing Pokemon World 💣"
 
 if Rails.env.development?
+  LearnedMove.destroy_all
+  Move.destroy_all
   Trainer.destroy_all
   Pokemon.destroy_all
 end
@@ -64,4 +66,15 @@ puts "Created #{Pokemon.count} Pokemon 🐢"
 puts "Finished Seeding 🌱"
 
 
-# names = %w(Water\ Gun Thunderbolt Ember Dig Tackle Body\ Slam)
+names = %w(Water\ Gun Thunderbolt Ember Dig Tackle Body\ Slam)
+
+names.each do |move|
+  Move.create!(name: move)
+end
+
+
+# Psuedo Code
+# Generate the moves table X
+# Generate the learned_moves table X
+# Add our associations and validations X
+# Crash test our data brick in rails c X
