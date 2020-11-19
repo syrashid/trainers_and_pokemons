@@ -3,7 +3,10 @@
     <div class="col-6">
       <h1> Add a move for <%= @pokemon.name %></h1>
       <%= simple_form_for [@pokemon, @learned_move] do |f| %>
-        <%= f.association :move, collection: Move.all %>
+        <%= f.association :move,
+                          collection: Move.all,
+                          input_html: { multiple: true },
+                          include_hidden: false %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
