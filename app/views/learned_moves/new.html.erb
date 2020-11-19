@@ -5,7 +5,7 @@
       <%= simple_form_for [@pokemon, @learned_move] do |f| %>
         <%= f.association :move,
                           collection: Move.all,
-                          input_html: { multiple: true },
+                          input_html: { multiple: true, class: 'select2' },
                           include_hidden: false %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
