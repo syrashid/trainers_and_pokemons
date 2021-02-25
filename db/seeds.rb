@@ -74,7 +74,7 @@ end
 
 
 # Psuedo Code
-# Generate the moves table X
-# Generate the learned_moves table X
-# Add our associations and validations X
-# Crash test our data brick in rails c X
+# Generate the moves table
+# Generate the learned_moves table
+# Add our associations and validations
+# Crash test our data brick in rails c
